@@ -1,18 +1,15 @@
 <?php
 date_default_timezone_set("Asia/Jakarta");
 
-// Koordinat lokasi Kecamatan Klojen
-$latitude = -7.982;  
-$longitude = 112.630;
-$timezone = "Asia/Bangkok";
-
 // API URL Open-Meteo
-$url = "https://api.open-meteo.com/v1/forecast?latitude={$latitude}&longitude={$longitude}&daily=temperature_2m_max,temperature_2m_min,precipitation_sum&timezone={$timezone}&forecast_days=3";
+$url = "https://api.open-meteo.com/v1/forecast?latitude=-7.973&longitude=112.6087&daily=temperature_2m_max,temperature_2m_min,precipitation_sum&timezone=Asia%2FBangkok&forecast_days=3";
 
 // Ambil data dari API
 $response = file_get_contents($url);
 $data = json_decode($response, true);
 
+$latitude = $data['latitude'];
+$longitude = $data['longitude'];
 $dates = $data['daily']['time'];
 $temp_max = $data['daily']['temperature_2m_max'];
 $temp_min = $data['daily']['temperature_2m_min'];
