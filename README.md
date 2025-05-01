@@ -1,1 +1,1 @@
-# Repository ini digunakan sebagai tempat tugas Sistem Integrasi
+# Repository ini digunakan sebagai tempat untuk tugas Sistem Integrasi
